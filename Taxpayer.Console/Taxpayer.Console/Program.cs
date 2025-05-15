@@ -1,4 +1,5 @@
 ﻿using TaxpayerConsole.Model;
+using TaxpayerConsole.Repos;
 
 try
 {
@@ -21,3 +22,6 @@ catch (Exception ex)
 antal.IncreaseTaxCredit(20000);
 antal.DecreaseTaxCredit(10000);
 Console.WriteLine(antal);
+
+TaxpayerRepo taxpayerRepo = new TaxpayerRepo();
+Console.WriteLine(taxpayerRepo.GetTaxpayerCount());
