@@ -61,6 +61,19 @@ namespace TaxpayerDesktop.ViewModels
             }
         }
 
+        [RelayCommand]
+        public void Remove()
+        {
+            if (SelectedTaxpayer == null)
+            {
+            }
+            else
+            {
+                _repo.DeleteTaxpayer(SelectedTaxpayer.Email);
+                Update();
+            }
+        }
+
         public void Update()
         {
             Taxpayers = _repo.GetAllTaxpayers();
