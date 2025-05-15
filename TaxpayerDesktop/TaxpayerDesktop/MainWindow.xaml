@@ -12,10 +12,10 @@
         <viewmodels:MainViewModel />
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type local:AdatokViewModel}">
+        <DataTemplate DataType="{x:Type viewmodels:AdatokViewModel}">
             <views:AdatokView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type local:AdozokViewModel}">
+        <DataTemplate DataType="{x:Type viewmodels:AdozokViewModel}">
             <views:AdozokView />
         </DataTemplate>
     </Window.Resources>

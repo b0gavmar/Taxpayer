@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,31 @@ using System.Threading.Tasks;
 
 namespace TaxpayerDesktop.ViewModels
 {
-    public class MainViewModel
+    public partial class MainViewModel : ObservableObject
     {
-       
-        public AdozokViewModel AdozokViewModel { get; set; }
-        public AdatokViewModel AdatokViewModel { get; set; }
+        private readonly AdozokViewModel AdozokViewModel;
+        private readonly AdatokViewModel AdatokViewModel;
+
+        [ObservableProperty]
+        private object currentViewModel;
 
         public MainViewModel()
         {
             AdozokViewModel = new AdozokViewModel();
             AdatokViewModel = new AdatokViewModel();
+            CurrentViewModel = AdatokViewModel;
+        }
+
+        [RelayCommand]
+        public void ShowAdatok()
+        {
+            CurrentViewModel = AdatokViewModel;
+        }
+
+        [RelayCommand]
+        public void ShowAdozok()
+        {
+            CurrentViewModel = AdozokViewModel;
         }
     }
 }
