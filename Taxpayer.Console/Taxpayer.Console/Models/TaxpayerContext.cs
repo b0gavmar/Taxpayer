@@ -16,7 +16,7 @@ public partial class TaxpayerContext : DbContext
     {
     }
 
-    public virtual DbSet<Manytaxpayer> Manytaxpayers { get; set; }
+    public virtual DbSet<Taxpayer> Manytaxpayers { get; set; }
 
     public virtual DbSet<Taxpayer> Taxpayers { get; set; }
 
@@ -26,7 +26,7 @@ public partial class TaxpayerContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Manytaxpayer>(entity =>
+        modelBuilder.Entity<Taxpayer>(entity =>
         {
             entity
                 .HasNoKey()
@@ -41,7 +41,7 @@ public partial class TaxpayerContext : DbContext
             entity.HasKey(e => e.Email);
         });
 
-        modelBuilder.Entity<Taxpayer>(entity =>
+        /*modelBuilder.Entity<Taxpayer>(entity =>
         {
             entity
                 .HasNoKey()
@@ -54,7 +54,7 @@ public partial class TaxpayerContext : DbContext
             entity.Property(e => e.Name).HasColumnName("name");
 
             entity.HasKey(e => e.Email);
-        });
+        });*/
 
         OnModelCreatingPartial(modelBuilder);
     }
