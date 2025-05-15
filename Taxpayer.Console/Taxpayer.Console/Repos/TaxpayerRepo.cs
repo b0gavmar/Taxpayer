@@ -66,6 +66,7 @@ namespace TaxpayerConsole.Repos
             {
                 Taxpayer newTaxpayer = new Taxpayer(name, email, newAmount);
                 _context.Taxpayers.Add(newTaxpayer);
+                _context.SaveChanges();
             }
         }
 
@@ -75,6 +76,7 @@ namespace TaxpayerConsole.Repos
             if (taxpayer != null)
             {
                 _context.Taxpayers.Remove(taxpayer);
+                _context.SaveChanges();
             }
             else
             {
