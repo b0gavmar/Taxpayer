@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaxpayerDesktop.Repos;
 
 namespace TaxpayerDesktop.ViewModels
 {
@@ -12,14 +13,16 @@ namespace TaxpayerDesktop.ViewModels
     {
         private readonly AdozokViewModel AdozokViewModel;
         private readonly AdatokViewModel AdatokViewModel;
+        private readonly ManyTaxpayerRepo _repo;
 
         [ObservableProperty]
         private object currentViewModel;
 
         public MainViewModel()
         {
-            AdozokViewModel = new AdozokViewModel();
-            AdatokViewModel = new AdatokViewModel();
+            _repo = new ManyTaxpayerRepo();
+            AdozokViewModel = new AdozokViewModel(_repo);
+            AdatokViewModel = new AdatokViewModel(_repo);
             CurrentViewModel = AdatokViewModel;
         }
 

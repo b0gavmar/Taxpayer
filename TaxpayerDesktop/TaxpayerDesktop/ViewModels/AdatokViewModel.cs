@@ -11,16 +11,17 @@ namespace TaxpayerDesktop.ViewModels
 {
     public partial class AdatokViewModel:ObservableObject
     {
-        private readonly ManyTaxpayerRepo _repo = new ManyTaxpayerRepo();
-        public AdatokViewModel()
+        private readonly ManyTaxpayerRepo _repo;
+        public AdatokViewModel(ManyTaxpayerRepo repo)
         {
+            _repo = repo;
             Update();
         }
 
         [ObservableProperty]
-        public int taxpayerCount = 0;
+        public int _taxpayerCount = 0;
         [ObservableProperty]
-        public string maxAndMin = "A legtöbb és legkevesebb: ";
+        public string _maxAndMin = "A legtöbb és legkevesebb: ";
 
 
         public void Update()
