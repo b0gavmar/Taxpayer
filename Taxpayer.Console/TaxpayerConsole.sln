@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxpayer.Console", "Taxpayer.Console\Taxpayer.Console.csproj", "{326A9808-F38A-4C7C-93CC-614CCE858299}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxpayerConsole", "Taxpayer.Console\TaxpayerConsole.csproj", "{326A9808-F38A-4C7C-93CC-614CCE858299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
