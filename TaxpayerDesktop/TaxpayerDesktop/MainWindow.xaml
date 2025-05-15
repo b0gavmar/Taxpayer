@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaxpayerDesktop"
+        xmlns:views="clr-namespace:TaxpayerDesktop.Views"
+        xmlns:viewmodels="clr-namespace:TaxpayerDesktop.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.DataContext>
+        <viewmodels:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:AdatokViewModel}">
+            <views:AdatokView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AdozokViewModel}">
+            <views:AdozokView />
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <DockPanel>
+            <Menu>
+                <MenuItem Header="adatok" Command="{Binding ShowAdatokCommand}"></MenuItem>
+                <MenuItem Header="adózók" Command="{Binding ShowAdozokCommand}"></MenuItem>
+            </Menu>
+        </DockPanel>
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+        
+        <!--
+        vagy a másik lehetőség:
+        <views:ControlPanelView DataContext="{Binding ControlPanelViewModel}" />
+        többi view
+        -->
+    </StackPanel>
 </Window>

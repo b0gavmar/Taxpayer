@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TaxpayerDesktop.Views
 {
     /// <summary>
-    /// Interaction logic for ControlPanelView.xaml
+    /// Interaction logic for AdatokView.xaml
     /// </summary>
-    public partial class ControlPanelView : UserControl
+    public partial class AdatokView : UserControl
     {
-        public ControlPanelView()
+        public AdatokView()
         {
             InitializeComponent();
         }
