@@ -85,5 +85,16 @@ namespace TaxpayerDesktop.Repos
                 throw new ArgumentException("Nincs ilyen email című adózó");
             }
         }
+
+        public void AddAmountByEmail(string email, int newAmount)
+        {
+            Taxpayer taxpayer = _context.Manytaxpayers.FirstOrDefault(t => t.Email == email);
+            if (taxpayer == null)
+            {
+                throw new ArgumentException("Nincs ilyen email című adózó");
+            }
+            taxpayer.Amount += newAmount;
+            _context.SaveChanges();
+        }
     }
 }

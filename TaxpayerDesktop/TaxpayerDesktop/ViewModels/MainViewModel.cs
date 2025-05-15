@@ -29,12 +29,14 @@ namespace TaxpayerDesktop.ViewModels
         [RelayCommand]
         public void ShowAdatok()
         {
+            AdatokViewModel.Update();
             CurrentViewModel = AdatokViewModel;
         }
 
         [RelayCommand]
         public void ShowAdozok()
         {
+            AdozokViewModel.Update();
             CurrentViewModel = AdozokViewModel;
         }
     }

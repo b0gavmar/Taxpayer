@@ -9,7 +9,7 @@
     <StackPanel>
         <ListBox
             ItemsSource="{Binding Taxpayers}"
-            SelectedItem=""
+            SelectedItem="{Binding SelectedTaxpayer}"
             Height="250"/>
         <Button
             Command="{Binding OrderByAmountCommand}"
@@ -22,6 +22,14 @@
         <Button
             Command="{Binding FilterByEmailCommand}"
             Content="Keresés email alapján"/>
+
+        <TextBlock
+            Text="Hozzáadás az összeghez a kijelöltnek"  Margin="0 10 0 0"/>
+        <TextBox
+            Text="{Binding Amount}"/>
+        <Button
+             Command="{Binding AddAmountCommand}"
+             Content="Hozzáadás"/>
 
     </StackPanel>
 </UserControl>
