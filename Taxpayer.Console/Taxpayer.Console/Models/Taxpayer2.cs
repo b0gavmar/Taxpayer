@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TaxpayerConsole.Models;
 
-public partial class Taxpayer
+public partial class Taxpayer2
 {
     public string? Email { get; set; }
 

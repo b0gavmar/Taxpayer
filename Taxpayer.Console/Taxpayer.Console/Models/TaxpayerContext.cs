@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using TaxpayerConsole.Model;
 
 namespace TaxpayerConsole.Models;
 
@@ -36,6 +37,8 @@ public partial class TaxpayerContext : DbContext
                 .HasColumnName("amount");
             entity.Property(e => e.Email).HasColumnName("email");
             entity.Property(e => e.Name).HasColumnName("name");
+
+            entity.HasKey(e => e.Email);
         });
 
         modelBuilder.Entity<Taxpayer>(entity =>
@@ -49,6 +52,8 @@ public partial class TaxpayerContext : DbContext
                 .HasColumnName("amount");
             entity.Property(e => e.Email).HasColumnName("email");
             entity.Property(e => e.Name).HasColumnName("name");
+
+            entity.HasKey(e => e.Email);
         });
 
         OnModelCreatingPartial(modelBuilder);
